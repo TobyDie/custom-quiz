@@ -1,6 +1,4 @@
-//v4
-
-
+//v5
 $(document).ready(function() {
   // Hide all questions except the first one
   $('.question:not(:first-of-type)').hide();
@@ -48,6 +46,9 @@ $(document).ready(function() {
     };
     document.cookie = "quiz_data=" + JSON.stringify(data) + ";max-age=7776000;path=/;domain=.hairqare.co";
 
+    // Start loading animation
+    $('.submit-btn').addClass('loading');
+
     // Post user's answers, name, and email to webhook
     $.ajax({
       url: 'https://hook.us1.make.com/7ldadddexettepgl3ftl7beuu3i8cp4t',
@@ -55,11 +56,13 @@ $(document).ready(function() {
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: function() {
-        // Redirect to thank you page
+        // Stop loading animation and redirect to thank you page
+        $('.submit-btn').removeClass('loading');
         window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/';
       },
       error: function() {
-        // Redirect to thank you page
+        // Stop loading animation and redirect to thank you page
+        $('.submit-btn').removeClass('loading');
         window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/';
       }
     });
