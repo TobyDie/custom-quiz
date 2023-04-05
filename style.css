@@ -1,3 +1,42 @@
+/* Import Fonts */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/inter/v3/UyBMtLsHKBKXelqf4x7VRQ.woff2") format("woff2"), url("https://fonts.gstatic.com/s/inter/v3/UyBMtLsHKBKXelqf4x6p.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Reckless Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://quiz.hairqare.co/RecklessNeue-Book.otf") format("opentype");
+  font-display: swap;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9f9f9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Reckless Neue", sans-serif;
+  margin-bottom: 1rem;
+}
+
 /* Styles for questions */
 .question {
   display: none;
@@ -5,13 +44,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 80%;
   max-width: 500px;
-  padding: 2rem;
+  background-color: #fff;
   border-radius: 1rem;
-  background-color: #f1f1f1;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1), 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  animation: swipe-in 0.5s ease-in-out;
+}
+
+@keyframes swipe-in {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
 }
 
 .question.active {
@@ -19,28 +69,37 @@
 }
 
 /* Styles for answers */
+.answers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 label {
   display: block;
   margin-bottom: 1rem;
   padding: 1rem;
-  border-radius: .5rem;
-  background-color: #f1f1f1;
+  border-radius: 1rem;
+  border: 3px solid orange;
+  background-color: #fff;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 label:hover {
-  background-color: #e0e0e0;
+  background-color: #f1f1f1;
+}
+
+input[type="radio"] {
+  display: none;
 }
 
 label.selected {
-  background-color: #2196f3;
+  background-color: linear-gradient(180deg, #f2b485, #e5925b);
   color: #fff;
-}
-
-/* Hide radio buttons */
-input[type="radio"] {
-  display: none;
+  border-color: linear-gradient(180deg, #f2b485, #e5925b);
 }
 
 /* Styles for form */
@@ -48,58 +107,21 @@ form {
   max-width: 500px;
   margin: 0 auto;
   padding: 1rem;
-  text-align: center;
 }
 
 .form-group {
   margin-bottom: 1rem;
 }
 
-label, input[type="email"], input[type="text"], button {
+label,
+input[type="email"],
+input[type="text"],
+button {
   width: 100%;
 }
 
-input[type="email"], input[type="text"], button {
-  padding: 0.5rem;
-  border: none;
-  border-radius: .5rem;
-  background-color: #f1f1f1;
-  color: #555;
-}
-
+input[type="email"],
+input[type="text"],
 button {
-  background-image: linear-gradient(180deg,#f2b485,#e5925b);
-  color: #fff;
-  font-size: 1rem;
-  padding: 1rem;
-  border: none;
-  border-radius: .5rem;
-  cursor: pointer;
-  transition: background-image 0.2s ease-in-out;
-}
-
-button:hover {
-  background-image: linear-gradient(180deg,#e5925b,#f2b485);
-}
-
-#submit-btn.loading:before {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  border-top-color: #fff;
-  animation: spin 0.6s linear infinite;
-  margin-right: 8px;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
+  padding: 0.5rem;
+  border: 3px solid orange;
