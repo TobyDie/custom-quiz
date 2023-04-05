@@ -167,6 +167,7 @@ button {
     border-radius: 25px; /* add border-radius property to make the edges rounded */
   }
   
+
   
   @media screen and (max-width: 768px) {
     .image-container img {
@@ -175,4 +176,52 @@ button {
       margin-top: 20px; /* add a margin-top property */
     }
   }
+
+#submit-btn {
+  position: relative;
+}
+
+#submit-btn.loading:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-left-color: #f2b485;
+  animation: spin 0.8s linear infinite;
+}
+
+#submit-btn.loading:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-left-color: #f2b485;
+  animation: spin 0.8s linear infinite;
+  animation-delay: 0.3s;
+}
+
+#submit-btn.loading:before,
+#submit-btn.loading:after {
+  opacity: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
   
