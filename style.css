@@ -1,0 +1,69 @@
+/* Styles for questions */
+.question {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.question.active {
+  display: block;
+}
+
+/* Styles for answers */
+label {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+label:hover {
+  background-color: #e0e0e0;
+}
+
+label.selected {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+/* Styles for form */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label, input[type="email"], input[type="text"], button {
+  width: 100%;
+}
+
+input[type="email"], input[type="text"], button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: .5rem;
+  background-color: #f1f1f1;
+  color: #555;
+}
+
+button {
+  background-color: #2196f3;
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0c7cd5;
+}
