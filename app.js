@@ -1,3 +1,5 @@
+
+//v1
 $(document).ready(function() {
   // Hide all questions except the first one
   $('.question:not(:first-of-type)').hide();
@@ -39,9 +41,9 @@ $(document).ready(function() {
 
     // Save user's answers, name, and email to cookie with 90 day expiry
     var data = {
+      answers: answers,
       name: name,
-      email: email,
-      answers: answers
+      email: email
     };
     document.cookie = "quiz_data=" + JSON.stringify(data) + ";max-age=7776000;path=/;domain=.hairqare.co";
 
