@@ -1,4 +1,3 @@
-//v4
 
 
 $(document).ready(function() {
