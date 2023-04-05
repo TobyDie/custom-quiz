@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
   // Hide all questions except the first one
   $('.question:not(:first-of-type)').hide();
