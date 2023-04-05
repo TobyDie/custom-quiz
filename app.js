@@ -32,7 +32,7 @@ $(document).ready(function() {
     var answers = {};
     $('.question').each(function() {
       var questionId = $(this).data('question-id');
-      var answerId = $(this).find('input[type="radio"]:checked').attr('id');
+      var answerId = $(this).find('input[type="radio"]:checked').attr('value');
       answers[questionId] = answerId;
     });
 
