@@ -1,4 +1,5 @@
-//v2
+//v3
+
 $(document).ready(function() {
   // Hide all questions except the first one
   $('.question:not(:first-of-type)').hide();
@@ -30,8 +31,8 @@ $(document).ready(function() {
     var answers = {};
     $('.question').each(function() {
       var questionId = $(this).data('question-id');
-      var answerText = $(this).find('input[type="radio"]:checked').siblings('label').text();
-      answers[questionId] = answerText.trim();
+      var answer = $(this).find('input[type="radio"]:checked').siblings('label').text();
+      answers[questionId] = answer;
     });
 
     // Get user's name and email
@@ -44,7 +45,10 @@ $(document).ready(function() {
       name: name,
       email: email
     };
-    $.cookie("quiz_data", JSON.stringify(data), { expires: 90, path: "/", domain: ".hairqare.co" });
+    document.cookie = "quiz_data=" + JSON.stringify(data) + ";max-age=7776000;path=/;domain=.hairqare.co";
+
+    // Show loading animation
+    $('.submit-btn').html('<i class="fa fa-spinner fa-spin"></i>');
 
     // Post user's answers, name, and email to webhook
     $.ajax({
