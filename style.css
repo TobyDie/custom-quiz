@@ -32,10 +32,16 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6
+{
   font-family: "Reckless Neue", sans-serif;
   margin-bottom: 1rem;
 }
+p {
+
+  margin-bottom: 1rem;
+}
+
 
 /* Styles for questions */
 .question {
@@ -79,10 +85,11 @@ h6 {
 
 label {
   display: block;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 1rem;
-  border: 3px solid orange;
+  border: 1px solid orange;
   background-color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
@@ -118,10 +125,52 @@ input[type="email"],
 input[type="text"],
 button {
   width: 100%;
+  border-radius: 1rem;
+  background-color: linear-gradient(180deg, #f2b485, #e5925b) !important;
 }
 
 input[type="email"],
 input[type="text"],
 button {
-  padding: 0.5rem;
-  border: 3px solid orange;
+  padding: 1rem;
+  
+  border: 1px solid orange;
+  border-radius: 1rem;}
+
+button {
+    background-image: linear-gradient(180deg, #f2b485, #e5925b);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #e5925b;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 600px; /* add a margin-top property */
+  }
+  
+  .image-container img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    margin-right: 20px;
+    border-radius: 25px; /* add border-radius property to make the edges rounded */
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .image-container img {
+      width: 100%;
+      margin: 10px 0;
+      margin-top: 20px; /* add a margin-top property */
+    }
+  }
+  
