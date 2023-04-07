@@ -173,7 +173,7 @@ button {
   .image-container {
     display: flex;
     justify-content: center;
-    margin-top: 60%; /* add a margin-top property */
+    margin-top: 40%; /* add a margin-top property */
     margin-bottom: 0%; /* add a margin-top property */
   }
   
