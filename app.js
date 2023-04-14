@@ -1,4 +1,4 @@
-//v6
+//v7
 $(document).ready(function() {
   // Helper function to get the value of a cookie
   function getCookieValue(cookieName) {
@@ -60,6 +60,16 @@ $(document).ready(function() {
     };
     document.cookie = "quiz_data=" + JSON.stringify(data) + ";max-age=7776000;path=/;domain=.hairqare.co";
 
+    // Track a 'Completed Quiz' event
+    cvgTrack({
+      eventName: "Completed Quiz",
+      properties: {
+        answers: answers,
+        name: name,
+        email: email
+      },
+    });
+
     // Start loading animation
     $('.submit-btn').addClass('loading');
 
@@ -82,5 +92,3 @@ $(document).ready(function() {
         window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid;
       }
     });
-  });
-});
