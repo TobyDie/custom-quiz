@@ -1,5 +1,19 @@
-//v5
+//v6
 $(document).ready(function() {
+  // Helper function to get the value of a cookie
+  function getCookieValue(cookieName) {
+    var name = cookieName + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookies = decodedCookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].trim();
+      if (cookie.indexOf(name) === 0) {
+        return cookie.substring(name.length, cookie.length);
+      }
+    }
+    return "";
+  }
+
   // Hide all questions except the first one
   $('.question:not(:first-of-type)').hide();
 
@@ -58,16 +72,15 @@ $(document).ready(function() {
       success: function() {
         // Stop loading animation and redirect to thank you page
         $('.submit-btn').removeClass('loading');
-        window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/';
+        var cvgUid = getCookieValue('__cvg_uid');
+        window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid;
       },
       error: function() {
         // Stop loading animation and redirect to thank you page
         $('.submit-btn').removeClass('loading');
-        window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/';
+        var cvgUid = getCookieValue('__cvg_uid');
+        window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid;
       }
     });
   });
 });
-
-
-
