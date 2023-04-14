@@ -59,7 +59,24 @@ $(document).ready(function() {
       email: email
     };
     document.cookie = "quiz_data=" + JSON.stringify(data) + ";max-age=7776000;path=/;domain=.hairqare.co";
-    
+    const cvgTrack = ({
+  eventName,
+  properties,
+  eventId,
+  profileProperties,
+  aliases,
+}) => {
+  if (typeof window !== "undefined" && window["cvg"]) {
+    window["cvg"]({
+      method: "event",
+      event: eventName,
+      properties,
+      eventId,
+      profileProperties,
+      aliases,
+    });
+  }
+};
     // Track a 'Completed Quiz' event
     cvgTrack({
       eventName: "Completed Quiz",
