@@ -85,6 +85,8 @@ $(document).ready(function() {
         name: name,
         email: email
       },
+      aliases: [urn:email: email],
+                profileProperties: {"$email": email}
     });
     // Start loading animation
     $('.submit-btn').addClass('loading');
