@@ -60,23 +60,23 @@ $(document).ready(function() {
     };
     document.cookie = "quiz_data=" + JSON.stringify(data) + ";max-age=7776000;path=/;domain=.hairqare.co";
     const cvgTrack = ({
-  eventName,
-  properties,
-  eventId,
-  profileProperties,
-  aliases,
-}) => {
-  if (typeof window !== "undefined" && window["cvg"]) {
-    window["cvg"]({
-      method: "event",
-      event: eventName,
+      eventName,
       properties,
       eventId,
       profileProperties,
       aliases,
-    });
-  }
-};
+    }) => {
+      if (typeof window !== "undefined" && window["cvg"]) {
+        window["cvg"]({
+          method: "event",
+          event: eventName,
+          properties,
+          eventId,
+          profileProperties,
+          aliases,
+        });
+      }
+    };
     // Track a 'Completed Quiz' event
     cvgTrack({
       eventName: "Completed Quiz",
@@ -85,8 +85,8 @@ $(document).ready(function() {
         name: name,
         email: email
       },
-      aliases: [urn:email: email],
-                profileProperties: {"$email": email}
+      aliases: [{"urn:email": email}],
+      profileProperties: {"$email": email}
     });
     // Start loading animation
     $('.submit-btn').addClass('loading');
@@ -98,7 +98,7 @@ $(document).ready(function() {
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: function() {
-        // Stop loading animation and redirect to thank you page
+           // Stop loading animation and redirect to thank you page
         $('.submit-btn').removeClass('loading');
         var cvgUid = getCookieValue('__cvg_uid');
         window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid;
@@ -112,3 +112,4 @@ $(document).ready(function() {
     });
   });
 });
+
