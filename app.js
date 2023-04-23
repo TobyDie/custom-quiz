@@ -101,13 +101,13 @@ $(document).ready(function() {
            // Stop loading animation and redirect to thank you page
         $('.submit-btn').removeClass('loading');
         var cvgUid = getCookieValue('__cvg_uid');
-        window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid;
+        window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email);
       },
       error: function() {
         // Stop loading animation and redirect to thank you page
         $('.submit-btn').removeClass('loading');
         var cvgUid = getCookieValue('__cvg_uid');
-        window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid;
+        window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email);
       }
     });
   });
