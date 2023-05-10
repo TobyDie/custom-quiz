@@ -2,7 +2,7 @@
 @font-face {
   font-family: "Inter";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 250;
   src: url("https://fonts.gstatic.com/s/inter/v3/UyBMtLsHKBKXelqf4x7VRQ.woff2") format("woff2"), url("https://fonts.gstatic.com/s/inter/v3/UyBMtLsHKBKXelqf4x6p.woff") format("woff");
   font-display: swap;
 }
@@ -10,7 +10,7 @@
 @font-face {
   font-family: "Reckless Neue";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   src: url("https://quiz.hairqare.co/RecklessNeue-Book.otf") format("opentype");
   font-display: swap;
 }
