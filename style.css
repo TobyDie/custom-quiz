@@ -56,7 +56,7 @@ p {
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1), 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
-  animation: swipe-in 0.5s ease-in-out;
+  animation: w3-animate-right 0.7s ease-in-out;
 }
 
 @keyframes swipe-in {
