@@ -45,7 +45,7 @@ p {
 
 /* Styles for questions */
 .question {
-  margin-top: 10%;
+  
   display: none;
   position: absolute;
   top: 50%;
@@ -190,6 +190,12 @@ button {
   
   
   @media screen and (max-width: 768px) {
+    body {
+      padding-top: 10%;}
+    
+      .question {
+      margin-top: 10%;}
+    
     .image-container {
       flex-direction: column;
       align-items: center;
