@@ -1,4 +1,4 @@
-//v10
+//v11
 $(document).ready(function () {
     // Helper function to get the value of a cookie
     function getCookieValue(cookieName) {
@@ -131,13 +131,13 @@ $(document).ready(function () {
             contentType: 'application/json',
             success: function () {
                 // Stop loading animation and redirect to thank you page
-                $('.submit-btn').removeClass('loading');
+                $('.submit-btn-85').removeClass('loading');
                 var cvgUid = getCookieValue('__cvg_uid');
                 window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-85/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
             },
             error: function () {
                 // Stop loading animation and redirect to thank you page
-                $('.submit-btn').removeClass('loading');
+                $('.submit-btn-85').removeClass('loading');
                 var cvgUid = getCookieValue('__cvg_uid');
                 window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-85/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
             }
