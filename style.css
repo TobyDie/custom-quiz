@@ -60,6 +60,11 @@ p {
   animation: w3-animate-right 0.7s ease-in-out;
 }
 
+.subtext {
+  font-size: 0.8rem;
+  color: gray;
+}
+
 @keyframes swipe-in {
   from {
     transform: translate(-50%, 100%);
