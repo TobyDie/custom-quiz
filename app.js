@@ -121,26 +121,6 @@ $(document).ready(function () {
                 window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
             }
         });
-        $('.submit-btn-85').addClass('loading');
-
-        // Post user's answers, name, and email to webhook
-        $.ajax({
-            url: 'https://hook.us1.make.com/7ldadddexettepgl3ftl7beuu3i8cp4t',
-            type: 'POST',
-            data: JSON.stringify(data),
-            contentType: 'application/json',
-            success: function () {
-                // Stop loading animation and redirect to thank you page
-                $('.submit-btn-85').removeClass('loading');
-                var cvgUid = getCookieValue('__cvg_uid');
-                window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-85/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
-            },
-            error: function () {
-                // Stop loading animation and redirect to thank you page
-                $('.submit-btn-85').removeClass('loading');
-                var cvgUid = getCookieValue('__cvg_uid');
-                window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-85/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
-            }
-        });
+    
     });
 });
