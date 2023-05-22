@@ -89,15 +89,17 @@ $(document).ready(function () {
         var { firstName, lastName } = separateName(name);
 
         // Track a 'Completed Quiz' event
-        cvgTrack({
-            eventName: "Completed Quiz",
-            properties: {
-                answers: answers,
-                name: name,
-                email: email
-            },
-            aliases: [{ "urn:email": email }],
-            profileProperties: { "$email": email }
+           cvgTrack({
+          eventName: "Completed Quiz",
+          properties: {
+             answers: answers,
+             name: name,
+             email: email
+          },
+          aliases: ["urn:email:" + email],
+          profileProperties: {
+            "$email": email
+          }
         });
         // Start loading animation
         $('.submit-btn').addClass('loading');
