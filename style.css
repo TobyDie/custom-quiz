@@ -161,7 +161,11 @@ button {
   
   border: 1px solid orange;
   border-radius: 1rem;}
-
+a {
+  color: #f2b485;
+}
+  
+  
 button {
     background-image: linear-gradient(180deg, #f2b485, #e5925b);
     color: #fff;
