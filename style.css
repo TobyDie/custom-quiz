@@ -165,7 +165,25 @@ button {
 a {
   color: #e5925b;
 }
-  
+
+.loading-button .button-text {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.loading-button.loading .button-text {
+  opacity: 0;
+}
+
+.loading-button .loading-icon {
+  display: none;
+}
+
+.loading-button.loading .loading-icon {
+  display: inline-block;
+  /* Add your loading icon or spinner styles here */
+}
+
   
 button {
     background-image: linear-gradient(180deg, #f2b485, #e5925b);
