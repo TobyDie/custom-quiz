@@ -181,8 +181,24 @@ a {
 
 .loading-button.loading .loading-icon {
   display: inline-block;
-  /* Add your loading icon or spinner styles here */
+   width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
 }
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
   
 button {
