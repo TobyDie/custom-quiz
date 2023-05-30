@@ -37,12 +37,14 @@ $(document).ready(function () {
     });
     // handle submit loading animation
 document.getElementById('submit-btn').addEventListener('click', function() {
-  document.getElementById('spinner').style.display = 'block'; // Show spinner
+  var spinner = document.getElementById('spinner');
+  spinner.style.display = 'inline-block'; // Show spinner
 
   setTimeout(function() {
-    document.getElementById('spinner').style.display = 'none'; // Hide spinner after 2 seconds
+    spinner.style.display = 'none'; // Hide spinner after 2 seconds
   }, 2000);
 });
+
 
     // Handle form submission
     $('form').on('submit', function (e) {
