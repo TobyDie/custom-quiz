@@ -129,19 +129,41 @@ label.selected {
 background-color: #f2b485;
 
 }
+
+.button-container {
+  position: relative;
+  display: inline-block;
+}
+
+#submit-btn {
+  padding-right: 30px;
+}
+
 .loader {
-  border: 16px solid #f3f3f3; 
-  border-top: 16px solid #3498db; 
+  border: 4px solid #f3f3f3; 
+  border-top: 4px solid #3498db; 
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 20px;
+  height: 20px;
   animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: none;
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+
+
+
+
+
 
 /* Styles for form */
 form {
