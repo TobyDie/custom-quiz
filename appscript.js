@@ -42,7 +42,7 @@ document.getElementById('submit-btn').addEventListener('click', function() {
 
   setTimeout(function() {
     spinner.style.display = 'none'; // Hide spinner after 2 seconds
-  }, 2000);
+  }, 6000);
 });
 
 
