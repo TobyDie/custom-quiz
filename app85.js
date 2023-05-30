@@ -13,7 +13,16 @@ $(document).ready(function () {
         }
         return "";
     }
+    // handle submit loading animation
+document.getElementById('submit-btn').addEventListener('click', function() {
+  var spinner = document.getElementById('spinner');
+  spinner.style.display = 'inline-block'; // Show spinner
 
+  setTimeout(function() {
+    spinner.style.display = 'none'; // Hide spinner after 2 seconds
+  }, 2000);
+});
+    
     // Hide all questions except the first one
     $('.question:not(:first-of-type)').hide();
 
