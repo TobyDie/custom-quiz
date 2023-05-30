@@ -65,29 +65,7 @@ p {
   color: gray;
 }
 
-@keyframes swipe-in {
-  from {
-    transform: translate(-50%, 100%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-}
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.loading {
-  animation: spin 1s infinite linear;
-}
-
-.loading-text {
-  color: darkorange;
-}
 
 .question.active {
   display: block;
@@ -132,7 +110,7 @@ label.selected {
 
 #q0-answer1 {
   display: block;
-  background-image: linear-gradient(180deg, #f2b485, #e5925b);
+  background-color: #e5925b;
   color: #fff;
   font-size: 1.2rem;
   padding: 1rem;
@@ -146,6 +124,47 @@ label.selected {
   border-radius: 1rem;
   border: 1px solid orange;
 }
+
+#q0-answer1:hover {
+background-color: #f2b485;
+
+}
+
+.button-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+#submit-btn {
+  padding-right: 30px;
+}
+
+.loader {
+  border: 4px solid #f3f3f3; 
+  border-top: 4px solid #3498db; 
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
 
 /* Styles for form */
 form {
@@ -164,7 +183,7 @@ input[type="text"],
 button {
   width: 100%;
   border-radius: 1rem;
-  background-color: linear-gradient(180deg, #f2b485, #e5925b) !important;
+  
 }
 
 input[type="email"],
@@ -184,18 +203,18 @@ a {
 
   
 button {
-    background-image: linear-gradient(180deg, #f2b485, #e5925b);
+    background-color: #e5925b;
     color: #fff;
     font-size: 1.2rem;
     padding: 1rem;
-    border: none;
+    border: 1px solid orange;
     border-radius: 1rem;
     cursor: pointer;
     transition: background-color 0.2s;
   }
   
   button:hover {
-    background-color: #e5925b;
+    background-color: #f2b485;
   }
   .image-container {
     display: flex;
