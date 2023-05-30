@@ -35,6 +35,14 @@ $(document).ready(function () {
             $('.submit-btn').show();
         }
     });
+    // handle submit loading animation
+document.getElementById('submit-btn').addEventListener('click', function() {
+  document.getElementById('spinner').style.display = 'block'; // Show spinner
+
+  setTimeout(function() {
+    document.getElementById('spinner').style.display = 'none'; // Hide spinner after 2 seconds
+  }, 2000);
+});
 
     // Handle form submission
     $('form').on('submit', function (e) {
