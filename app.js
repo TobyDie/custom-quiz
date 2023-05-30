@@ -102,8 +102,33 @@ $(document).ready(function () {
             "$email": email
           }
         });
-        // Start loading animation
-        $('.submit-btn').addClass('loading');
+      
+        // Loading animation
+        function startLoading() {
+  var button = document.getElementById('submit-btn');
+  button.disabled = true; // Disable the button
+  button.innerHTML = '<span class="loading-text">Loading...</span>'; // Change button text
+
+  // Add loading class to apply animation
+  button.classList.add('loading');
+
+  // Simulate loading delay
+  setTimeout(function() {
+    stopLoading();
+  }, 2000); // Change the duration as needed
+}
+
+function stopLoading() {
+  var button = document.getElementById('submit-btn');
+  button.disabled = false; // Enable the button
+  button.innerHTML = 'Submit'; // Restore button text
+
+  // Remove loading class to stop animation
+  button.classList.remove('loading');
+}
+
+        
+        
 
         // Post user's answers, name, and email to webhook
         $.ajax({
