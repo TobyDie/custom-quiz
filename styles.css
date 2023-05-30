@@ -164,7 +164,7 @@ input[type="text"],
 button {
   width: 100%;
   border-radius: 1rem;
-  background-color: linear-gradient(180deg, #f2b485, #e5925b) !important;
+  
 }
 
 input[type="email"],
@@ -184,7 +184,7 @@ a {
 
   
 button {
-    background-image: linear-gradient(180deg, #f2b485, #e5925b);
+    background-color: #e5925b;
     color: #fff;
     font-size: 1.2rem;
     padding: 1rem;
@@ -195,7 +195,7 @@ button {
   }
   
   button:hover {
-    background-color: #e5925b;
+    background-color: #f2b485;
   }
   .image-container {
     display: flex;
