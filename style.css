@@ -76,6 +76,19 @@ p {
   }
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading {
+  animation: spin 1s infinite linear;
+}
+
+.loading-text {
+  color: darkorange;
+}
+
 .question.active {
   display: block;
 }
@@ -166,38 +179,7 @@ a {
   color: #e5925b;
 }
 
-.loading-button .button-text {
-  opacity: 1;
-  transition: opacity 0.2s;
-}
 
-.loading-button.loading .button-text {
-  opacity: 0;
-}
-
-.loading-button .loading-icon {
-  display: none;
-}
-
-.loading-button.loading .loading-icon {
-  display: inline-block;
-   width: 20px;
-  height: 20px;
-  border: 2px solid #ccc;
-  border-top-color: #333;
-  border-radius: 50%;
-  animation: spin 1s infinite linear;
-}
-
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 
   
