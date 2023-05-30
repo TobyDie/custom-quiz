@@ -133,6 +133,7 @@ background-color: #f2b485;
 .button-container {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 #submit-btn {
