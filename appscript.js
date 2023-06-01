@@ -1,4 +1,4 @@
-//v1
+//v2
 $(document).ready(function () {
     // Helper function to get the value of a cookie
     function getCookieValue(cookieName) {
@@ -13,6 +13,16 @@ $(document).ready(function () {
         }
         return "";
     }
+
+    // Handle submit loading animation
+    document.getElementById('submit-btn').addEventListener('click', function () {
+        var spinner = document.getElementById('spinner');
+        spinner.style.display = 'inline-block'; // Show spinner
+
+        setTimeout(function () {
+            spinner.style.display = 'none'; // Hide spinner after 2 seconds
+        }, 6000);
+    });
 
     // Hide all questions except the first one
     $('.question:not(:first-of-type)').hide();
@@ -35,16 +45,6 @@ $(document).ready(function () {
             $('.submit-btn').show();
         }
     });
-    // handle submit loading animation
-document.getElementById('submit-btn').addEventListener('click', function() {
-  var spinner = document.getElementById('spinner');
-  spinner.style.display = 'inline-block'; // Show spinner
-
-  setTimeout(function() {
-    spinner.style.display = 'none'; // Hide spinner after 2 seconds
-  }, 6000);
-});
-
 
     // Handle form submission
     $('form').on('submit', function (e) {
@@ -69,6 +69,7 @@ document.getElementById('submit-btn').addEventListener('click', function() {
             email: email
         };
         document.cookie = "quiz_data=" + JSON.stringify(data) + ";max-age=7776000;path=/;domain=.hairqare.co";
+
         const cvgTrack = ({
             eventName,
             properties,
@@ -99,20 +100,29 @@ document.getElementById('submit-btn').addEventListener('click', function() {
         var { firstName, lastName } = separateName(name);
 
         // Track a 'Completed Quiz' event
-             cvgTrack({
-          eventName: "Completed Quiz",
-          properties: {
-             answers: answers,
-             name: name,
-             email: email
-          },
-          aliases: ["urn:email:" + email],
-          profileProperties: {
-            "$email": email
-          }
+        cvgTrack({
+            eventName: "Completed Quiz",
+            properties: {
+                answers: answers,
+                name: name,
+                email: email
+            },
+            aliases: ["urn:email:" + email],
+            profileProperties: {
+                "$email": email
+            }
         });
+
         // Start loading animation
+        
         $('.submit-btn').addClass('loading');
+
+        // Prepare redirect URL
+        var cvgUid = getCookieValue('__cvg_uid');
+        var redirectUrl = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-85/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
+
+        // Redirect user to next page immediately
+        window.location.href = redirectUrl;
 
         // Post user's answers, name, and email to webhook
         $.ajax({
@@ -121,18 +131,12 @@ document.getElementById('submit-btn').addEventListener('click', function() {
             data: JSON.stringify(data),
             contentType: 'application/json',
             success: function () {
-                // Stop loading animation and redirect to thank you page
-                $('.submit-btn').removeClass('loading');
-                var cvgUid = getCookieValue('__cvg_uid');
-                window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-85/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
+                // Successful webhook request; handle as needed
             },
             error: function () {
-                // Stop loading animation and redirect to thank you page
-                $('.submit-btn').removeClass('loading');
-                var cvgUid = getCookieValue('__cvg_uid');
-                window.location.href = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-85/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
+                // Failed webhook request; handle as needed
             }
         });
-    
     });
 });
+       
