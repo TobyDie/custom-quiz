@@ -119,7 +119,7 @@ $(document).ready(function () {
 
         // Prepare redirect URL
         var cvgUid = getCookieValue('__cvg_uid');
-        var redirectUrl = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-85/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
+        var redirectUrl = 'https://checkout.hairqare.co/buy/hairqare-challenge-promotion-90/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
 
         // Redirect user to next page immediately
         window.location.href = redirectUrl;
