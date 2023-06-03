@@ -58,7 +58,7 @@ p {
   max-width: 500px;
   background-color: #fff;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1), 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
   animation: w3-animate-right 0.7s ease-in-out;
 }
