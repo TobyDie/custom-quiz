@@ -37,6 +37,9 @@ h6
   font-family: "Reckless Neue", sans-serif;
   margin-bottom: 1rem;
 }
+
+
+
 p {
 
   margin-bottom: 1rem;
@@ -235,6 +238,23 @@ button {
   
   
   @media screen and (max-width: 768px) {
+    h2
+    {
+  font-size: 27px;
+}
+h3
+    {
+  font-size: 25px;
+}
+h4
+    {
+  font-size: 20px;
+}
+h5,
+h6
+{
+  font-size: 27px;
+}
     body {
       padding-top: 10%;}
     
