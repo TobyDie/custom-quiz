@@ -126,7 +126,7 @@ $(document).ready(function () {
 
         // Post user's answers, name, and email to webhook
         $.ajax({
-            url: 'https://hook.us1.make.com/7ldadddexettepgl3ftl7beuu3i8cp4t',
+            url: 'https://hook.us1.make.com/946smv36d833jdnqlwfkav1b67ri5fnk',
             type: 'POST',
             data: JSON.stringify(data),
             contentType: 'application/json',
