@@ -13,6 +13,8 @@ $(document).ready(function () {
         }
         return "";
     }
+//track quiz started event in TT upon page load
+     ttq.instance('CI05U8BC77U4TTM9727G').track('QSTART')
 
     // Handle submit loading animation
     document.getElementById('submit-btn').addEventListener('click', function () {
@@ -112,6 +114,11 @@ $(document).ready(function () {
                 "$email": email
             }
         });
+
+    ttq.track('SubmitForm',{  
+    answers: answers,
+    name: name,
+    email: email });
 
         // Start loading animation
         
