@@ -119,14 +119,14 @@ $(document).ready(function () {
 
         // Prepare redirect URL
         var cvgUid = getCookieValue('__cvg_uid');
-        var redirectUrl = 'https://checkout.hairqare.co/buy/hairqare-challenge-save-90/?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
+        var redirectUrl = 'https://members.hairqare.co/offers/rUEvP9az?__cvg_uid=' + cvgUid + '&billing_email=' + encodeURIComponent(email) + '&billing_first_name=' + encodeURIComponent(firstName) + '&billing_last_name=' + encodeURIComponent(lastName);
 
         // Redirect user to next page immediately
         window.location.href = redirectUrl;
 
         // Post user's answers, name, and email to webhook
         $.ajax({
-            url: 'https://hook.us1.make.com/7ldadddexettepgl3ftl7beuu3i8cp4t',
+            url: 'https://hook.us1.make.com/86fb3m8fp0kbqtjusi14r063yrdmnuug',
             type: 'POST',
             data: JSON.stringify(data),
             contentType: 'application/json',
