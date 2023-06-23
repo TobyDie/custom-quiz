@@ -1,4 +1,4 @@
-//v1
+//v2
 $(document).ready(function () {
     // Helper function to get the value of a cookie
     function getCookieValue(cookieName) {
@@ -13,8 +13,6 @@ $(document).ready(function () {
         }
         return "";
     }
-//track quiz started event in TT upon page load
-     ttq.instance('CI05U8BC77U4TTM9727G').track('QSTART')
 
     // Handle submit loading animation
     document.getElementById('submit-btn').addEventListener('click', function () {
@@ -115,11 +113,6 @@ $(document).ready(function () {
             }
         });
 
-    ttq.track('SubmitForm',{  
-    answers: answers,
-    name: name,
-    email: email });
-
         // Start loading animation
         
         $('.submit-btn').addClass('loading');
@@ -133,7 +126,7 @@ $(document).ready(function () {
 
         // Post user's answers, name, and email to webhook
         $.ajax({
-            url: 'https://hook.us1.make.com/86fb3m8fp0kbqtjusi14r063yrdmnuug',
+            url: 'https://hook.us1.make.com/7ldadddexettepgl3ftl7beuu3i8cp4t',
             type: 'POST',
             data: JSON.stringify(data),
             contentType: 'application/json',
@@ -147,3 +140,8 @@ $(document).ready(function () {
     });
 });
        
+
+
+
+
+
