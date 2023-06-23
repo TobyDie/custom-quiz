@@ -18,6 +18,36 @@
  </script>
 <!-- End Converge Pixel Snippet -->
   
+
+<script type="text/javascript"
+    src="https://www.almn5trk.com/scripts/sdk/everflow.js"></script>
+
+<script type="text/javascript">
+	EF.configure({tld: "hairqare.co"});
+
+  
+  EF.click({
+    offer_id: EF.urlParameter('oid'),
+    affiliate_id: EF.urlParameter('affid'),
+    sub1: EF.urlParameter('sub1'),
+    sub2: EF.urlParameter('sub2'),
+    sub3: EF.urlParameter('sub3'),
+    sub4: EF.urlParameter('sub4'),
+    sub5: EF.urlParameter('sub5'),
+    uid: EF.urlParameter('uid'),
+    source_id: EF.urlParameter('source_id'),
+    transaction_id: EF.urlParameter('_ef_transaction_id'),
+})
+
+
+.then(function(transaction_id) {
+// transaction_id contains the unique Everflow transaction ID
+console.log(transaction_id)
+localStorage.setItem("_ef_transaction_id", transaction_id);
+});
+
+</script>
+<!-- Everfloew Tracking Code End -->
   <!-- Deadline Funnel -->
   <script type="text/javascript" data-cfasync="false">function SendUrlToDeadlineFunnel(e){var r,t,c,a,h,n,o,A,i = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",d=0,l=0,s="",u=[];if(!e)return e;do r=e.charCodeAt(d++),t=e.charCodeAt(d++),c=e.charCodeAt(d++),A=r<<16|t<<8|c,a=A>>18&63,h=A>>12&63,n=A>>6&63,o=63&A,u[l++]=i.charAt(a)+i.charAt(h)+i.charAt(n)+i.charAt(o);while(d<e.length);s=u.join("");var C=e.length%3;var decoded = (C?s.slice(0,C-3):s)+"===".slice(C||3);decoded = decoded.replace("+", "-");decoded = decoded.replace("/", "_");return decoded;} var dfUrl = SendUrlToDeadlineFunnel(location.href); var dfParentUrlValue;try {dfParentUrlValue = window.parent.location.href;} catch(err) {if(err.name === "SecurityError") {dfParentUrlValue = document.referrer;}}var dfParentUrl = (parent !== window) ? ("/" + SendUrlToDeadlineFunnel(dfParentUrlValue)) : "";(function() {var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.setAttribute("data-scriptid", "dfunifiedcode");s.src ="https://a.deadlinefunnel.com/unified/reactunified.bundle.js?userIdHash=eyJpdiI6ImU4WExiTEpzcE5TWVdzdlcyMFhXQmc9PSIsInZhbHVlIjoieVwvNnFMbWtrUXh1N0xkZDZwT3p0Nmc9PSIsIm1hYyI6IjI3ZmM3NjRiZGJjZjBkYWUxYWMzOGUyZjYzMzQ1ODU3NTJiZTNkYzM2MWQ4YmI2MGE5NWEyNDc4ZGRmMmEwN2UifQ==&pageFromUrl="+dfUrl+"&parentPageFromUrl="+dfParentUrl;var s2 = document.getElementsByTagName("script")[0];s2.parentNode.insertBefore(s, s2);})();</script>
   <!-- End Deadline Funnel -->
