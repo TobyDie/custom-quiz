@@ -72,6 +72,21 @@ $(document).ready(function () {
         };
         document.cookie = "quiz_data=" + JSON.stringify(data) + ";max-age=7776000;path=/;domain=.hairqare.co";
 
+
+        //tiktok advance match user
+        ttq.identify({
+        email: email,
+        })
+        //tiktok track standard event when quiz is submitted
+        ttq.track('SubmitForm', {
+        answers: answers,
+        name: name,
+        email: email,
+
+        });
+
+
+      
         const cvgTrack = ({
             eventName,
             properties,
