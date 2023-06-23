@@ -1,4 +1,4 @@
-//v3
+//v4
 $(document).ready(function () {
     // Helper function to get the value of a cookie
     function getCookieValue(cookieName) {
